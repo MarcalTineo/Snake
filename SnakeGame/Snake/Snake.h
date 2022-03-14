@@ -4,7 +4,9 @@
 #include <vector>
 #include <Input.h>
 #include <DrawEngine.h>
+#include <string>;
 
+using namespace std;
 
 class Snake : public IActor
 {
@@ -18,13 +20,13 @@ private:
 	Vector2 headPosition;
 	int length;
 	Vector2 forward;
-	std::vector<Vector2> positions;
+	Vector2 lastMoveForward;
+	vector<Vector2> positions; //last position is virtual, it only exist to let the actual last piece draw correctly
 	float timer;
 	float speed;
 
 public:
 	
-
 	Snake();
 	Snake(Vector2 _position, 
 		  int _length, 
@@ -40,12 +42,15 @@ public:
 	void SetState(State newState);
 
 	void AddOneLength();
+	Vector2 GetHeadPosition();
 
+	vector<Vector2> GetPositions();
+	int GetLength();
 
 private:
 	void ProcessInputs();
 	void MoveForward();
-	void CheckCollisions();
-	void CheckCollisionsBody();
+	void CheckCollisionsHimself();
 };
+
 

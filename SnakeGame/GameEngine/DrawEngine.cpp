@@ -88,9 +88,7 @@ void DrawEngine::InitViewport()
 	}
 	viewport[sizeX * sizeY] = '\0';
 	for (int i = 0; i < sizeX * sizeY; i++)
-	{
 		viewportColors[i] = 15;
-	}
 }
 
 void DrawEngine::SetCursorPosition(int x, int y)

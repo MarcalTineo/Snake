@@ -15,6 +15,11 @@ Vector2 Vector2::operator*(const Vector2 &v) const
 	return Vector2(x * v.x, y * v.y);
 }
 
+Vector2 Vector2::operator/(const Vector2& v) const
+{
+	return Vector2(x / v.x, y / v.y);
+}
+
 Vector2& Vector2::operator+=(const Vector2& v) 
 {
 	x += v.x;
@@ -36,6 +41,13 @@ Vector2& Vector2::operator*=(const Vector2& v)
 	return *this;
 }
 
+Vector2& Vector2::operator/=(const Vector2& v)
+{
+	x /= v.x;
+	y /= v.y;
+	return *this;
+}
+
 bool Vector2::operator==(const Vector2& v)
 {
 	return x == v.x && y == v.y;
@@ -54,6 +66,11 @@ Vector2 Vector2::operator-() const
 Vector2 Vector2::operator*(const int& s) const
 {
 	return Vector2 (x * s, y * s);
+}
+
+Vector2 Vector2::operator/(const int& s) const
+{
+	return Vector2(x / s, y / s);
 }
 
 Vector2 Vector2::Zero()

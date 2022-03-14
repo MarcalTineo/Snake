@@ -19,6 +19,7 @@ void Engine::RunGame()
 	DrawEngine::GetInstance().SetDrawEngine(currentGame->GetSizeX(), 
 											currentGame->GetSizeY(), 
 											currentGame->GetDefultColor());
+	Helpers::InitRandomSeed();
 	initTime = GetTime();
 	nextTime = GetTime();
 	int count = 0;

@@ -33,5 +33,7 @@ public:
 	void DrawFullLine(char first, char middle, char last, int line);
 
 	void DrawMiddleLine(char c, int line);
+
+	bool InsideBorders(Vector2 position);
 };
 

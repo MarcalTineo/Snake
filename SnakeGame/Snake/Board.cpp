@@ -33,7 +33,10 @@ void Board::DrawFullLine(char first, char middle, char last, int line)
 void Board::DrawMiddleLine(char c, int line)
 {
 	for (int i = 1; i < size.x - 1; i++)
-	{
 		DrawEngine::GetInstance().DrawAtPos(c, i, line);
-	}
+}
+
+bool Board::InsideBorders(Vector2 position)
+{
+	return position.x > 0 && position.x < size.x - 1 && position.y > 3 && position.y < size.y - 1;
 }
